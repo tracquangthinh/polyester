@@ -28,6 +28,7 @@ sgseq = function(readmat, transcripts, paired, outdir, extras, reportCoverage=FA
 
       if (!extras$strand_specific) {
         #reverse_complement some of those fragments
+        print("[INFO] Reverse complement for some fragments...")
         tFrags = reverse_complement(tFrags)
       }
 
