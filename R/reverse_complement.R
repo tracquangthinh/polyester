@@ -16,6 +16,8 @@ reverse_complement = function(tObj, seed=NULL){
     if(!is.null(seed)) set.seed(seed)
     strand = sample(c(0,1), length(tObj), replace=TRUE)
     tObj[strand==0] = reverseComplement(tObj[strand==0])
+    names(tObj[strand==0]) = paste0(names(tObj[strand==0], ";-"))
+    names(tObj[strand!=0]) = paste0(names(tObj[strand!=0], ";+"))
     return(tObj)
 }
 
